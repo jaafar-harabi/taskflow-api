@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taskflow
+    username: taskflow
+    password: taskflow
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: changeme-very-secret-key-change-it
+  expiration-minutes: 60
+
+logging:
+  level:
+    org.springframework.security: INFO
