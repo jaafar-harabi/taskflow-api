@@ -1,23 +1,23 @@
+server:
+  port: ${SERVER_PORT:8080}
+
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/taskflow
-    username: taskflow
-    password: taskflow
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+
   jpa:
     hibernate:
       ddl-auto: validate
     properties:
       hibernate:
         format_sql: true
+
   flyway:
     enabled: true
 
-server:
-  port: 8080
-
 jwt:
-  secret: changeme-very-secret-key-change-it
-  expiration-minutes: 60
+  secret: ${JWT_SECRET}
+  expiration-minutes: ${JWT_EXPIRATION_MINUTES:60}
 
 logging:
   level:
